@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="w3-container">
+        <h1>JAVASCRIPT OPERATORS</h1>
+        <p>GIVEN: If A = 23.72 and B = 5.2, compute for the following:</p>
+
+        <div class="Box">
+            <div class="J_container">
+                <p>Arithmetic Operator<br><br>Exponent:<br><br>Modulo:</p>
+                <button type="button" onClick="calculateArithmetic()">Calculate</button>
+            </div>
+        </div>
+
+        <div class="Box">
+            <div class="J_container">
+                <p>Comparison Operator<br><br>Is A greater than B?<br><br>Is A equal to B?</p>
+                <button type="button" onClick="calculateComparison()">Calculate</button>
+            </div>
+        </div>
+
+        <div class="Box">
+            <div class="J_container">
+                <p>Logical Operator<br><br>True or False:<br><br>True or False:</p>
+                <button type="button" onClick="calculateLogical()">Calculate</button>
+            </div>
+        </div>
+
+        <div id="result">
+            <strong>Result will appear here.</strong>
+        </div>
+
+        <button type="button" onClick="clearResult()">Clear</button>
+
+        <script type="text/javascript">
+            const A = 23.72;
+            const B = 5.2;
+
+            function calculateArithmetic() {
+                let exponent = Math.pow(A, B);
+                let modulo = A % B;
+
+                document.getElementById('result').innerHTML = `
+                    <strong>Exponentiation (A^B):</strong> ${exponent.toFixed(2)} <br>
+                    <strong>Modulo (A % B):</strong> ${modulo.toFixed(2)}
+                `;
+            }
+
+            function calculateComparison() {
+                let isGreater = A > B;
+                let isEqual = A === B;
+
+                document.getElementById('result').innerHTML = `
+                    <strong>Is A greater than B?</strong> ${isGreater} <br>
+                    <strong>Is A equal to B?</strong> ${isEqual}
+                `;
+            }
+
+            function calculateLogical() {
+                let andOperator = (A > B) && (B > 0);
+                let orOperator = (A > B) || (B < 0);
+
+                document.getElementById('result').innerHTML = `
+                    <strong>(A > B) AND (B > 0):</strong> ${andOperator} <br>
+                    <strong>(A > B) OR (B < 0):</strong> ${orOperator}
+                `;
+            }
+
+            function clearResult() {
+                document.getElementById('result').innerHTML = "<strong>Result will appear here.</strong>";
+            }
+        </script>
+    </div>
+
+</body>
+</html>
